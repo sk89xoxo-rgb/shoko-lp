@@ -1,0 +1,2267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>私だもの。｜自分の感覚を取り戻す個別対話</title>
+
+  <meta
+    name="description"
+    content="家族も仕事も大切なのに、自分の気持ちだけが分からないママへ。体感学®に基づく対話を通して、本音と感覚を取り戻し、自分で次の一歩を選べるようになる個別セッションです。"
+  >
+
+  <style>
+    :root {
+      --ink: #27221e;
+      --deep: #302923;
+      --brown: #756559;
+      --beige: #e7ddd0;
+      --sand: #d8c7b5;
+      --paper: #f8f3ec;
+      --white: #fffdf8;
+      --green: #687b62;
+      --light-green: #dfe6da;
+      --line: rgba(60, 49, 40, 0.18);
+      --shadow: rgba(63, 50, 40, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        "YuMincho",
+        serif;
+      line-height: 2;
+      letter-spacing: 0.05em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3 {
+      text-wrap: balance;
+    }
+
+    .section {
+      padding: 105px 8vw;
+    }
+
+    .section-inner {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-label {
+      margin-bottom: 20px;
+      color: var(--brown);
+      font-family: Georgia, serif;
+      font-size: 12px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0 0 34px;
+      font-size: clamp(34px, 5vw, 66px);
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0.07em;
+    }
+
+    .section-text {
+      max-width: 740px;
+      font-size: 17px;
+    }
+
+    .large-copy {
+      margin: 42px 0;
+      font-size: clamp(25px, 3.2vw, 40px);
+      line-height: 1.8;
+    }
+
+    .small-note {
+      color: var(--brown);
+      font-size: 13px;
+    }
+
+    /* BUTTON */
+
+    .button-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-top: 38px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 58px;
+      padding: 14px 30px;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--ink);
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease,
+        background 0.3s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      opacity: 0.92;
+    }
+
+    .button-light {
+      border-color: var(--white);
+      color: var(--deep);
+      background: var(--white);
+    }
+
+    .button-outline {
+      color: var(--ink);
+      background: transparent;
+    }
+
+    .button-green {
+      border-color: var(--green);
+      background: var(--green);
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      padding: 38px 5vw 55px;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        linear-gradient(
+          90deg,
+          rgba(31, 25, 21, 0.82) 0%,
+          rgba(40, 32, 26, 0.56) 43%,
+          rgba(49, 41, 34, 0.12) 74%,
+          rgba(242, 232, 219, 0.08) 100%
+        ),
+        url("your-main-image.jpg") center 34% / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.03) 0%,
+          rgba(0, 0, 0, 0.03) 58%,
+          rgba(30, 24, 20, 0.62) 100%
+        );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      min-height: calc(100svh - 93px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .hero-brand {
+      font-size: 13px;
+      letter-spacing: 0.13em;
+    }
+
+    .hero-mark {
+      text-align: right;
+      font-family: Georgia, serif;
+      font-size: 12px;
+      line-height: 1.5;
+      letter-spacing: 0.14em;
+    }
+
+    .hero-mark strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 34px;
+      font-weight: 400;
+    }
+
+    .hero-main {
+      max-width: 920px;
+      margin-top: 8vh;
+    }
+
+    .hero-credential {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 7px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: 999px;
+      background: rgba(42, 35, 29, 0.18);
+      backdrop-filter: blur(5px);
+      font-size: 12px;
+      letter-spacing: 0.13em;
+    }
+
+    .hero-catch {
+      max-width: 720px;
+      margin-bottom: 18px;
+      font-size: clamp(14px, 1.7vw, 19px);
+      line-height: 1.8;
+      letter-spacing: 0.1em;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(64px, 13vw, 164px);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.07em;
+    }
+
+    .hero-lead {
+      max-width: 780px;
+      margin-top: 28px;
+      font-size: clamp(18px, 2.3vw, 29px);
+      line-height: 1.9;
+    }
+
+    .hero-bottom {
+      display: grid;
+      grid-template-columns: minmax(0, 760px) auto;
+      gap: 50px;
+      align-items: end;
+    }
+
+    .hero-message-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid currentColor;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+    }
+
+    .hero-message h2 {
+      margin: 0 0 12px;
+      font-size: clamp(26px, 3.8vw, 48px);
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .hero-message p {
+      max-width: 660px;
+      margin-bottom: 0;
+      font-size: 15px;
+    }
+
+    .hero-scroll {
+      writing-mode: vertical-rl;
+      font-family: Georgia, serif;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+    }
+
+    /* EMPATHY */
+
+    .empathy {
+      background: var(--paper);
+    }
+
+    .empathy-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .vertical-title {
+      min-height: 510px;
+      margin: 0;
+      writing-mode: vertical-rl;
+      font-size: clamp(35px, 5vw, 66px);
+      font-weight: 400;
+      line-height: 1.75;
+      letter-spacing: 0.1em;
+    }
+
+    .empathy-body {
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    .empathy-body p {
+      font-size: 17px;
+    }
+
+    .pain-list {
+      margin: 40px 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .pain-list li {
+      position: relative;
+      padding: 18px 0 18px 30px;
+      border-bottom: 1px solid var(--line);
+      font-size: 16px;
+    }
+
+    .pain-list li::before {
+      content: "—";
+      position: absolute;
+      top: 18px;
+      left: 0;
+      color: var(--green);
+    }
+
+    /* CORE QUESTION */
+
+    .core-question {
+      color: var(--white);
+      background: var(--deep);
+    }
+
+    .core-question .section-label {
+      color: #c7b7a8;
+    }
+
+    .core-box {
+      width: min(900px, 100%);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .core-box h2 {
+      margin: 0;
+      font-size: clamp(35px, 5.4vw, 72px);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .core-box p {
+      max-width: 760px;
+      margin: 40px auto 0;
+      color: #e9e1d9;
+      font-size: 17px;
+    }
+
+    .core-answer {
+      margin-top: 55px !important;
+      color: #d9e5d3 !important;
+      font-size: clamp(25px, 3.3vw, 42px) !important;
+      line-height: 1.8;
+    }
+
+    /* FUTURE */
+
+    .future {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 75% 16%,
+          rgba(255, 255, 255, 0.98),
+          rgba(255, 255, 255, 0) 36%
+        ),
+        linear-gradient(
+          145deg,
+          #eee6dc 0%,
+          #f8f3ec 45%,
+          #e4e9df 100%
+        );
+    }
+
+    .future-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 62px;
+    }
+
+    .future-card {
+      min-height: 370px;
+      padding: 38px 32px;
+      border: 1px solid rgba(81, 95, 74, 0.19);
+      background: rgba(255, 253, 248, 0.78);
+      backdrop-filter: blur(8px);
+    }
+
+    .future-number {
+      margin-bottom: 38px;
+      color: var(--green);
+      font-family: Georgia, serif;
+      font-size: 13px;
+      letter-spacing: 0.17em;
+    }
+
+    .future-card h3 {
+      margin: 0 0 20px;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.65;
+    }
+
+    .future-card p {
+      color: #544c45;
+      font-size: 15px;
+    }
+
+    .future-scene {
+      width: min(900px, 100%);
+      margin: 80px auto 0;
+      padding: 55px;
+      border-left: 1px solid var(--green);
+      background: rgba(255, 255, 255, 0.38);
+    }
+
+    .future-scene p {
+      margin-bottom: 0;
+      font-size: clamp(20px, 2.4vw, 29px);
+      line-height: 2;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #ddd0c0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.88fr 1.12fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      min-height: 620px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .about-image::after {
+      content: "";
+      position: absolute;
+      right: -20px;
+      bottom: -20px;
+      width: 58%;
+      height: 46%;
+      z-index: -1;
+      background: var(--green);
+      opacity: 0.34;
+    }
+
+    .about-text {
+      padding: 30px 0;
+    }
+
+    .about-text h2 {
+      margin: 0 0 35px;
+      font-size: clamp(34px, 4.7vw, 60px);
+      font-weight: 400;
+      line-height: 1.55;
+    }
+
+    .about-text p {
+      font-size: 16px;
+    }
+
+    .about-emphasis {
+      margin: 40px 0;
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-size: clamp(22px, 2.7vw, 33px) !important;
+      line-height: 1.8;
+    }
+
+    .about-profile {
+      margin-top: 35px;
+      color: var(--brown);
+      font-size: 13px !important;
+    }
+
+    /* METHOD */
+
+    .method {
+      background:
+        radial-gradient(
+          circle at 85% 10%,
+          rgba(255, 255, 255, 0.96),
+          rgba(255, 255, 255, 0) 34%
+        ),
+        linear-gradient(
+          145deg,
+          #f1e9df 0%,
+          #f9f5ef 48%,
+          #dfe7db 100%
+        );
+    }
+
+    .method-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 75px;
+      align-items: end;
+    }
+
+    .method-copy p {
+      font-size: 16px;
+    }
+
+    .step-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 65px;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .step-card {
+      position: relative;
+      min-height: 420px;
+      padding: 35px 28px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.56);
+    }
+
+    .step-number {
+      color: var(--green);
+      font-family: Georgia, serif;
+      font-size: 13px;
+    }
+
+    .step-en {
+      margin-top: 6px;
+      color: var(--brown);
+      font-family: Georgia, serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+    }
+
+    .step-card h3 {
+      margin: 52px 0 18px;
+      font-size: 32px;
+      font-weight: 400;
+    }
+
+    .step-card p {
+      color: #514940;
+      font-size: 14px;
+    }
+
+    .step-result {
+      position: absolute;
+      right: 28px;
+      bottom: 28px;
+      left: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--green);
+      font-size: 13px;
+    }
+
+    .method-message {
+      width: min(850px, 100%);
+      margin: 75px auto 0;
+      padding: 48px;
+      border-left: 1px solid var(--green);
+      background: rgba(255, 255, 255, 0.46);
+    }
+
+    .method-message p:last-child {
+      margin-bottom: 0;
+      font-size: clamp(25px, 3.6vw, 43px);
+      line-height: 1.75;
+    }
+
+    /* SESSION */
+
+    .session {
+      background:
+        radial-gradient(
+          circle at 82% 18%,
+          rgba(255, 255, 255, 0.95),
+          rgba(255, 255, 255, 0) 31%
+        ),
+        linear-gradient(
+          140deg,
+          #e2d4c3,
+          #f5eee5 52%,
+          #dfe6da
+        );
+    }
+
+    .session-box {
+      display: grid;
+      grid-template-columns: 0.84fr 1.16fr;
+      max-width: 1080px;
+      margin: 0 auto;
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.84);
+      box-shadow: 0 35px 90px var(--shadow);
+    }
+
+    .session-side {
+      padding: 55px 42px;
+      color: var(--white);
+      background: var(--green);
+    }
+
+    .session-side h2 {
+      margin: 0;
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .session-side p {
+      margin-top: 35px;
+      color: #eef1eb;
+    }
+
+    .session-main {
+      padding: 58px 52px;
+    }
+
+    .session-main h3 {
+      margin: 0 0 25px;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .session-main p {
+      font-size: 15px;
+    }
+
+    .session-themes {
+      margin: 35px 0;
+      padding: 25px 30px;
+      border-left: 3px solid var(--green);
+      background: rgba(223, 230, 218, 0.45);
+    }
+
+    .session-themes p {
+      margin-bottom: 8px;
+    }
+
+    .session-themes p:last-child {
+      margin-bottom: 0;
+    }
+
+    .session-experience {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      margin: 38px 0;
+      background: var(--line);
+    }
+
+    .session-experience div {
+      padding: 23px;
+      background: rgba(255, 253, 248, 0.86);
+    }
+
+    .session-experience span {
+      color: var(--green);
+      font-family: Georgia, serif;
+      font-size: 12px;
+    }
+
+    .session-experience p {
+      margin: 9px 0 0;
+      font-size: 14px;
+    }
+
+    .session-list {
+      margin: 35px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .session-list li {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .session-note {
+      margin-top: 25px;
+      color: var(--brown);
+      font-size: 12px !important;
+    }
+
+    /* FAQ */
+
+    .faq {
+      background: var(--paper);
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .faq-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-item h3 {
+      margin: 0 0 14px;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    .faq-item p {
+      margin-bottom: 0;
+      color: #544c45;
+      font-size: 15px;
+    }
+
+    /* JOURNAL */
+
+    .journal {
+      background: #d9ccbd;
+    }
+
+    .journal-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: end;
+    }
+
+    .journal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 60px;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .journal-card {
+      position: relative;
+      min-height: 390px;
+      padding: 38px 30px 32px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(248, 243, 236, 0.68);
+      transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+    }
+
+    .journal-card:hover {
+      z-index: 1;
+      transform: translateY(-7px);
+      background: var(--paper);
+    }
+
+    .journal-platform {
+      color: var(--brown);
+      font-family: Georgia, serif;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+    }
+
+    .journal-card h3 {
+      margin: 48px 0 18px;
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 1.55;
+    }
+
+    .journal-card p {
+      color: #514940;
+      font-size: 14px;
+    }
+
+    .journal-link {
+      position: absolute;
+      right: 30px;
+      bottom: 28px;
+      left: 30px;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+    }
+
+    /* FINAL CTA */
+
+    .final-cta {
+      position: relative;
+      padding: 130px 8vw;
+      overflow: hidden;
+      text-align: center;
+      color: var(--white);
+      background:
+        linear-gradient(
+          rgba(42, 35, 29, 0.65),
+          rgba(42, 35, 29, 0.76)
+        ),
+        url("your-main-image.jpg") center 40% / cover no-repeat;
+    }
+
+    .final-cta-inner {
+      position: relative;
+      z-index: 1;
+      width: min(900px, 100%);
+      margin: 0 auto;
+    }
+
+    .final-cta h2 {
+      margin: 0 0 32px;
+      font-size: clamp(42px, 7vw, 86px);
+      font-weight: 400;
+      line-height: 1.45;
+    }
+
+    .final-cta p {
+      font-size: 17px;
+    }
+
+    .final-small {
+      margin-top: 28px;
+      font-size: 13px !important;
+      opacity: 0.84;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 32px 8vw;
+      color: #cfc2b4;
+      background: #211c18;
+      font-size: 12px;
+    }
+
+    /* MOBILE FIXED CTA */
+
+    .mobile-fixed-cta {
+      display: none;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 1000px) {
+      .step-flow {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .section {
+        padding: 82px 7vw;
+      }
+
+      .hero {
+        padding: 28px 6vw 38px;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(30, 24, 20, 0.62),
+            rgba(30, 24, 20, 0.26) 42%,
+            rgba(30, 24, 20, 0.82)
+          ),
+          url("your-main-image.jpg") 58% center / cover no-repeat;
+      }
+
+      .hero-content {
+        min-height: calc(100svh - 66px);
+      }
+
+      .hero-brand {
+        max-width: 220px;
+        font-size: 11px;
+      }
+
+      .hero-mark {
+        font-size: 10px;
+      }
+
+      .hero-mark strong {
+        font-size: 28px;
+      }
+
+      .hero-main {
+        margin-top: 8vh;
+      }
+
+      .hero-bottom {
+        display: block;
+      }
+
+      .hero-scroll {
+        display: none;
+      }
+
+      .empathy-grid,
+      .about-grid,
+      .method-intro,
+      .session-box,
+      .faq-layout,
+      .journal-header {
+        grid-template-columns: 1fr;
+      }
+
+      .vertical-title {
+        min-height: auto;
+        writing-mode: horizontal-tb;
+        font-size: 42px;
+        line-height: 1.55;
+      }
+
+      .future-list,
+      .journal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .future-card {
+        min-height: 275px;
+      }
+
+      .about-image img {
+        min-height: 470px;
+      }
+
+      .session-side,
+      .session-main {
+        padding: 42px 28px;
+      }
+
+      .final-cta {
+        padding: 100px 7vw;
+      }
+
+      footer {
+        display: block;
+        text-align: center;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+      body {
+        padding-bottom: 76px;
+        line-height: 1.85;
+        letter-spacing: 0.035em;
+      }
+
+      .section {
+        padding: 68px 6vw;
+      }
+
+      .section-label {
+        margin-bottom: 15px;
+      }
+
+      .section-title {
+        margin-bottom: 24px;
+        font-size: 34px;
+        line-height: 1.55;
+      }
+
+      .section-text {
+        font-size: 15px;
+      }
+
+      .hero {
+        min-height: 100svh;
+      }
+
+      .hero h1 {
+        font-size: 62px;
+      }
+
+      .hero-catch {
+        font-size: 14px;
+      }
+
+      .hero-lead {
+        margin-top: 23px;
+        font-size: 17px;
+        line-height: 1.8;
+      }
+
+      .hero-message h2 {
+        font-size: 25px;
+      }
+
+      .hero-message p {
+        font-size: 14px;
+      }
+
+      .button-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+
+      .button {
+        width: 100%;
+        padding-inline: 20px;
+      }
+
+      .vertical-title {
+        font-size: 35px;
+      }
+
+      .empathy-body p {
+        font-size: 16px;
+      }
+
+      .pain-list li {
+        font-size: 15px;
+      }
+
+      .core-box h2 {
+        font-size: 34px;
+      }
+
+      .core-box p {
+        font-size: 15px;
+      }
+
+      .future-list {
+        gap: 16px;
+        margin-top: 45px;
+      }
+
+      .future-card {
+        padding: 30px 24px;
+      }
+
+      .future-card h3 {
+        font-size: 22px;
+      }
+
+      .future-scene,
+      .method-message {
+        padding: 32px 23px;
+      }
+
+      .future-scene p {
+        font-size: 19px;
+      }
+
+      .about-image img {
+        min-height: 390px;
+      }
+
+      .about-text h2 {
+        font-size: 34px;
+      }
+
+      .about-emphasis {
+        font-size: 22px !important;
+      }
+
+      .step-flow,
+      .session-experience {
+        grid-template-columns: 1fr;
+      }
+
+      .step-card {
+        min-height: 350px;
+      }
+
+      .session-main h3 {
+        font-size: 24px;
+      }
+
+      .faq-item h3 {
+        font-size: 18px;
+      }
+
+      .journal-card {
+        min-height: 350px;
+      }
+
+      .final-cta h2 {
+        font-size: 42px;
+      }
+
+      .final-cta p {
+        font-size: 15px;
+      }
+
+      .mobile-fixed-cta {
+        position: fixed;
+        z-index: 100;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        padding: 10px 14px;
+        background: rgba(255, 253, 248, 0.96);
+        box-shadow: 0 -5px 25px rgba(39, 34, 30, 0.14);
+        backdrop-filter: blur(8px);
+      }
+
+      .mobile-fixed-cta a {
+        display: flex;
+        min-height: 52px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 999px;
+        color: var(--white);
+        background: var(--green);
+        font-size: 14px;
+        letter-spacing: 0.08em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+
+        <div class="hero-top">
+
+          <div class="hero-brand">
+            “私”を後回しにしないための個別対話
+          </div>
+
+          <div class="hero-mark">
+            PRIVATE<br>
+            DIALOGUE
+            <strong>01</strong>
+          </div>
+
+        </div>
+
+        <div class="hero-main">
+
+          <div class="hero-credential">
+            体感学®認定講師・しょうこ
+          </div>
+
+          <div class="hero-catch">
+            家族も仕事も大切。なのに、自分の気持ちだけが分からないママへ
+          </div>
+
+          <h1>私だもの。</h1>
+
+          <p class="hero-lead">
+            「どうすべき？」を考え続ける毎日から、<br>
+            「私はどうしたい？」を自分で選べる私へ。<br>
+            対話と体感を通して、自分の感覚を取り戻す個別セッションです。
+          </p>
+
+        </div>
+
+        <div class="hero-bottom">
+
+          <div>
+
+            <div class="hero-message">
+
+              <div class="hero-message-label">
+                BACK TO MYSELF
+              </div>
+
+              <h2>
+                私を大切にすることは、<br>
+                家族を大切にしないことではない。
+              </h2>
+
+              <p>
+                我慢してから爆発するのではなく、
+                自分の本音を知り、
+                家族と私の両方を大切にする選び方へ。
+              </p>
+
+            </div>
+
+            <div class="button-wrap">
+
+              <a class="button button-light" href="#session">
+                無料対話を体験する
+              </a>
+
+              <a
+                class="button button-outline"
+                href="#about"
+                style="border-color:#fff;color:#fff;"
+              >
+                しょうこについて
+              </a>
+
+            </div>
+
+          </div>
+
+          <div class="hero-scroll">
+            SCROLL TO READ
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- EMPATHY -->
+    <section class="section empathy">
+      <div class="section-inner empathy-grid">
+
+        <h2 class="vertical-title">
+          ちゃんとしている。<br>
+          それなのに、<br>
+          私がいない。
+        </h2>
+
+        <div class="empathy-body">
+
+          <div class="section-label">
+            Dear you
+          </div>
+
+          <p>
+            朝、子どもを送り出す。<br>
+            家事を片づけ、仕事の予定を確認し、
+            家族が困らないように今日も先回りする。
+          </p>
+
+          <p>
+            「しっかりしているね」<br>
+            「ちゃんとしているね」
+          </p>
+
+          <p>
+            そう言われるほど、なぜか苦しくなる。
+          </p>
+
+          <p>
+            家族が嫌いなわけではない。<br>
+            子どもだって大切。
+          </p>
+
+          <p>
+            それなのに、何も考えず、
+            一人になりたいと思う日がある。
+          </p>
+
+          <ul class="pain-list">
+            <li>
+              子どもにイライラしたあと、
+              一日中自分を責めてしまう
+            </li>
+
+            <li>
+              夫に頼めばいいのに、
+              結局自分でやってから腹を立てる
+            </li>
+
+            <li>
+              好きなことをしている人を見ると、
+              うらやましさと罪悪感が一緒に湧いてくる
+            </li>
+
+            <li>
+              「何がしたい？」と聞かれると、
+              何も浮かばない
+            </li>
+
+            <li>
+              本音を言うより、
+              周りが困らない答えを選んでしまう
+            </li>
+          </ul>
+
+          <p class="large-copy">
+            私は本当は、<br>
+            どう生きたいんだろう。
+          </p>
+
+          <p>
+            あなたに望みがないのではありません。
+          </p>
+
+          <p>
+            家族や周りの声を優先する時間が長くなり、
+            自分の感覚が聴こえにくくなっているだけです。
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CORE QUESTION -->
+    <section class="section core-question">
+      <div class="section-inner core-box">
+
+        <div class="section-label">
+          The question behind the pain
+        </div>
+
+        <h2>
+          私を優先したら、<br>
+          わがままな母親に<br>
+          なるのでしょうか。
+        </h2>
+
+        <p>
+          休みたいと言うこと。<br>
+          一人の時間がほしいと伝えること。<br>
+          自分の好きなことを始めること。
+        </p>
+
+        <p>
+          それを選んだら、
+          家族に迷惑をかけるような気がして、
+          また自分を後回しにしてしまう。
+        </p>
+
+        <p class="core-answer">
+          自分を大切にすることは、<br>
+          家族をないがしろにすることではありません。
+        </p>
+
+        <p>
+          自分の状態に気づけるようになると、
+          限界まで我慢する前に休める。
+          爆発する前に助けを求められる。
+          相手を責める前に、自分の希望を伝えられる。
+        </p>
+
+        <p>
+          自分を知ることは、
+          自分勝手になることではなく、
+          家族との関係を我慢だけで続けないための土台です。
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- FUTURE -->
+    <section class="section future">
+      <div class="section-inner">
+
+        <div class="section-label">
+          The life waiting for you
+        </div>
+
+        <h2 class="section-title">
+          私に戻ると、<br>
+          日常の選び方が変わり始める。
+        </h2>
+
+        <p class="section-text">
+          急に完璧な自分になるわけではありません。<br>
+          でも、誰かの顔色や正解ではなく、
+          自分の状態と望みから選べる瞬間が増えていきます。
+        </p>
+
+        <div class="future-list">
+
+          <article class="future-card">
+
+            <div class="future-number">
+              01 / EMOTION
+            </div>
+
+            <h3>
+              イライラした自分を、<br>
+              一日中責め続けなくなる
+            </h3>
+
+            <p>
+              感情をなくすのではなく、
+              「私は今、余裕がない」と早く気づけるようになります。
+              怒ったあとも自分を責め続けず、
+              必要な休息や助けを選べるようになります。
+            </p>
+
+          </article>
+
+          <article class="future-card">
+
+            <div class="future-number">
+              02 / FAMILY
+            </div>
+
+            <h3>
+              我慢して爆発する前に、<br>
+              自分の希望を伝えられる
+            </h3>
+
+            <p>
+              「どちらでもいい」
+              「私は大丈夫」と飲み込むのではなく、
+              今日は休みたい、これは手伝ってほしいと、
+              小さな本音を言葉にできるようになります。
+            </p>
+
+          </article>
+
+          <article class="future-card">
+
+            <div class="future-number">
+              03 / CHOICE
+            </div>
+
+            <h3>
+              周りの正解ではなく、<br>
+              私の納得で選べる
+            </h3>
+
+            <p>
+              続ける、辞める、減らす、始める。
+              誰かの価値観だけで決めず、
+              家族と自分の両方を大切にできる選択を
+              考えられるようになります。
+            </p>
+
+          </article>
+
+        </div>
+
+        <div class="future-scene">
+
+          <p>
+            子どもに「ママは何が好き？」と聞かれたとき、<br>
+            困った顔ではなく、少し笑いながら答えられる。<br><br>
+
+            「ママはね、これが好き」<br><br>
+
+            そんな自分を、
+            少し誇らしく思える未来へ。
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="section-inner about-grid">
+
+        <div class="about-image">
+          <img
+            src="your-profile-image.jpg"
+            alt="体感学®認定講師しょうこ"
+          >
+        </div>
+
+        <div class="about-text">
+
+          <div class="section-label">
+            About Shoko
+          </div>
+
+          <h2>
+            私も、<br>
+            自分の気持ちが<br>
+            分からないママでした。
+          </h2>
+
+          <p>
+            私は、家族のことも仕事のことも、
+            きちんと考えているつもりでした。
+          </p>
+
+          <p>
+            けれど、
+            「しょうこはどうしたい？」と聞かれると、
+            うまく答えられませんでした。
+          </p>
+
+          <p>
+            誰かの期待に応えること。<br>
+            母親として正しくいること。<br>
+            迷惑をかけないこと。
+          </p>
+
+          <p>
+            それを大切にするうちに、
+            私自身の感覚を後回しにしていたからです。
+          </p>
+
+          <p>
+            今も、子育てで怒ったり、
+            迷ったり、
+            自分が分からなくなる日はあります。
+          </p>
+
+          <p class="about-emphasis">
+            だから私は、<br>
+            正しい答えを教える人ではありません。
+          </p>
+
+          <p>
+            あなたの言葉を急いでまとめず、
+            その奥にある感覚を一緒に見つけます。
+          </p>
+
+          <p>
+            「うまく言えない」<br>
+            「自分でも何がつらいのか分からない」
+          </p>
+
+          <p>
+            そんな、まだ言葉になっていないところから、
+            あなたのペースで対話を始めます。
+          </p>
+
+          <p class="about-profile">
+            体感学®認定講師・しょうこ<br>
+            0歳と4歳の子どもを育てながら活動しています。
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- METHOD -->
+    <section class="section method">
+      <div class="section-inner">
+
+        <div class="method-intro">
+
+          <div>
+
+            <div class="section-label">
+              Dialogue method
+            </div>
+
+            <h2 class="section-title">
+              答えを渡すのではなく、<br>
+              自分の答えを受け取れる私へ。
+            </h2>
+
+          </div>
+
+          <div class="method-copy">
+
+            <p>
+              私の対話の土台にあるのは、体感学®です。
+            </p>
+
+            <p>
+              知識や正しい方法をさらに増やすのではなく、
+              今の思考、感情、身体の感覚に気づき、
+              自分の真ん中へ戻ることを大切にします。
+            </p>
+
+            <p>
+              頭だけで答えを決めるのではなく、
+              自分の状態と望みが分かったうえで、
+              日常でできる一歩を選んでいきます。
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="step-flow">
+
+          <article class="step-card">
+
+            <div class="step-number">01</div>
+
+            <div class="step-en">
+              NOTICE
+            </div>
+
+            <h3>気づく</h3>
+
+            <p>
+              今、何を考え、
+              どんな感情や身体の反応があるのかを、
+              自分を責めずに眺めます。
+            </p>
+
+            <div class="step-result">
+              モヤモヤの正体が見えてくる
+            </div>
+
+          </article>
+
+          <article class="step-card">
+
+            <div class="step-number">02</div>
+
+            <div class="step-en">
+              SEPARATE
+            </div>
+
+            <h3>分ける</h3>
+
+            <p>
+              「こうするべき」という考えと、
+              自分自身の本音や感覚を分けて整理します。
+            </p>
+
+            <div class="step-result">
+              周りの声と自分の声を区別できる
+            </div>
+
+          </article>
+
+          <article class="step-card">
+
+            <div class="step-number">03</div>
+
+            <div class="step-en">
+              CHOOSE
+            </div>
+
+            <h3>選ぶ</h3>
+
+            <p>
+              「どう見られるか」ではなく、
+              「私は何を大切にしたいか」を確認します。
+            </p>
+
+            <div class="step-result">
+              自分の納得で決められる
+            </div>
+
+          </article>
+
+          <article class="step-card">
+
+            <div class="step-number">04</div>
+
+            <div class="step-en">
+              ACT
+            </div>
+
+            <h3>動く</h3>
+
+            <p>
+              無理に大きく変えず、
+              今の生活の中でできる小さな一歩を選びます。
+            </p>
+
+            <div class="step-result">
+              現実の行動につなげられる
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="method-message">
+
+          <p>
+            行動できない私は、
+            意志が弱いのではありません。
+          </p>
+
+          <p>
+            自分の状態に気づかないまま、
+            正しい答えだけを出そうとしていたのかもしれません。
+          </p>
+
+          <p>
+            自分に戻るから、<br>
+            私の人生を自分で動かせる。
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FREE SESSION -->
+    <section id="session" class="section session">
+      <div class="section-inner">
+
+        <div class="session-box">
+
+          <div class="session-side">
+
+            <div
+              class="section-label"
+              style="color:#e6ece2;"
+            >
+              Free dialogue session
+            </div>
+
+            <h2>
+              私に戻る、<br>
+              はじめの対話。
+            </h2>
+
+            <p>
+              うまく説明できなくても、<br>
+              まだ答えがなくても大丈夫です。<br><br>
+
+              まとまっていない今の気持ちから、
+              一緒に始めます。
+            </p>
+
+          </div>
+
+          <div class="session-main">
+
+            <h3>
+              今抱えているモヤモヤを、<br>
+              一人で整理しなくていい時間です。
+            </h3>
+
+            <p>
+              無料体験では、
+              今気になっていることを、
+              話せる範囲から伺います。
+            </p>
+
+            <div class="session-themes">
+
+              <p>
+                子育てでイライラする自分を責めてしまう
+              </p>
+
+              <p>
+                仕事を続けるか、働き方を変えるか迷っている
+              </p>
+
+              <p>
+                家族を大切にしたいのに、一人になりたい
+              </p>
+
+              <p>
+                自分が何をしたいのか分からない
+              </p>
+
+              <p>
+                特定の悩みはないけれど、なんとなく苦しい
+              </p>
+
+            </div>
+
+            <p>
+              テーマが決まっていなくても、
+              「何に悩んでいるか分からない」という状態でも
+              大丈夫です。
+            </p>
+
+            <p>
+              対話をしながら、
+              今どんなことを考えているのか、
+              本当は何を大切にしたいのかを一緒に整理します。
+            </p>
+
+            <p>
+              無理に答えを出したり、
+              話したくないことを深掘りしたりすることはありません。
+            </p>
+
+            <div class="session-experience">
+
+              <div>
+                <span>01</span>
+
+                <p>
+                  今モヤモヤしている理由が言葉になる
+                </p>
+              </div>
+
+              <div>
+                <span>02</span>
+
+                <p>
+                  自分が本当に大切にしたいことが見えてくる
+                </p>
+              </div>
+
+              <div>
+                <span>03</span>
+
+                <p>
+                  自分を責める以外の見方を持ち帰れる
+                </p>
+              </div>
+
+              <div>
+                <span>04</span>
+
+                <p>
+                  今日からできる小さな一歩を決められる
+                </p>
+              </div>
+
+            </div>
+
+            <ul class="session-list">
+
+              <li>
+                <strong>時間：</strong>
+                30〜45分
+              </li>
+
+              <li>
+                <strong>形式：</strong>
+                オンラインでの個別対話
+              </li>
+
+              <li>
+                <strong>対象：</strong>
+                ちゃんとしているのに、自分の感覚が分からなくなっているママ
+              </li>
+
+              <li>
+                <strong>担当：</strong>
+                体感学®認定講師・しょうこ
+              </li>
+
+              <li>
+                <strong>お子さま：</strong>
+                そばにいる状態でもご相談いただけます
+              </li>
+
+            </ul>
+
+            <div class="button-wrap">
+
+              <a
+                class="button button-green"
+                href="YOUR_APPLICATION_URL"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                私に戻る対話を体験する
+              </a>
+
+            </div>
+
+            <p class="session-note">
+              体験後、ご希望や現在の状況に合う場合は、
+              継続セッションについてご案内することがあります。<br>
+
+              その場で申込みを決めていただく必要はありません。
+              無理な勧誘は行いません。<br><br>
+
+              本セッションは、医療行為・診断・治療を目的としたものではありません。
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section faq">
+      <div class="section-inner faq-layout">
+
+        <div>
+
+          <div class="section-label">
+            FAQ
+          </div>
+
+          <h2 class="section-title">
+            申し込む前に、<br>
+            よくいただく質問。
+          </h2>
+
+          <p>
+            不安なまま申し込む必要はありません。<br>
+            よくあるご質問をまとめました。
+          </p>
+
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+
+            <h3>
+              何を話せばいいか決まっていなくても大丈夫ですか？
+            </h3>
+
+            <p>
+              大丈夫です。
+              「何に悩んでいるか分からない」
+              「ただモヤモヤしている」という状態から始められます。
+            </p>
+
+          </div>
+
+          <div class="faq-item">
+
+            <h3>
+              子どもがそばにいても受けられますか？
+            </h3>
+
+            <p>
+              可能です。
+              途中でお子さまの対応が必要になった場合も、
+              状況に合わせて進めます。
+            </p>
+
+          </div>
+
+          <div class="faq-item">
+
+            <h3>
+              話したくないことも聞かれますか？
+            </h3>
+
+            <p>
+              無理にお話しいただくことはありません。
+              話す内容や深さは、ご自身で決めていただけます。
+            </p>
+
+          </div>
+
+          <div class="faq-item">
+
+            <h3>
+              体験後に勧誘されますか？
+            </h3>
+
+            <p>
+              ご希望や状況に合う場合は、
+              継続セッションをご案内することがあります。
+              その場で決める必要はなく、
+              無理な勧誘は行いません。
+            </p>
+
+          </div>
+
+          <div class="faq-item">
+
+            <h3>
+              カウンセリングとの違いは何ですか？
+            </h3>
+
+            <p>
+              医療的な診断や治療を行うものではありません。
+              対話と体感を通して、
+              今の自分の状態や望みに気づき、
+              日常で選べる一歩を見つけていきます。
+            </p>
+
+          </div>
+
+          <div class="faq-item">
+
+            <h3>
+              話すことが苦手でも大丈夫ですか？
+            </h3>
+
+            <p>
+              大丈夫です。
+              きれいに説明したり、
+              結論を出したりする必要はありません。
+              言葉にならない時間も含めて、
+              あなたのペースを大切にします。
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- JOURNAL -->
+    <section id="journal" class="section journal">
+      <div class="section-inner">
+
+        <div class="journal-header">
+
+          <div>
+
+            <div class="section-label">
+              Journal
+            </div>
+
+            <h2 class="section-title">
+              もう少し知りたい方へ。<br>
+              読みものと声。
+            </h2>
+
+          </div>
+
+          <div>
+
+            <p>
+              ここで伝えているのは、
+              きれいな正解ではありません。
+            </p>
+
+            <p>
+              子どもに怒った夜。<br>
+              ちゃんとしているのに苦しくなった午後。<br>
+              自分の気持ちが分からなくなった朝。
+            </p>
+
+            <p>
+              揺れたままの私から見つけたことを、
+              文章と声で届けています。
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="journal-grid">
+
+          <a
+            class="journal-card"
+            href="YOUR_SUBSTACK_URL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <div class="journal-platform">
+              SUBSTACK
+            </div>
+
+            <h3>
+              感情に滞在しながら、<br>
+              私の輪郭を取り戻す
+            </h3>
+
+            <p>
+              子育て、働き方、夫婦、自分自身。
+              簡単に答えを出さず、
+              日常にある揺れを言葉にする対話ログです。
+            </p>
+
+            <div class="journal-link">
+              <span>エッセイと音声</span>
+              <span>READ →</span>
+            </div>
+
+          </a>
+
+          <a
+            class="journal-card"
+            href="YOUR_STANDFM_URL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <div class="journal-platform">
+              STAND.FM
+            </div>
+
+            <h3>
+              家事の途中に、<br>
+              自分の声を思い出す
+            </h3>
+
+            <p>
+              朝の数分や、ひと息ついた時間に。
+              考えすぎた頭を少し休め、
+              自分に戻るためのラジオです。
+            </p>
+
+            <div class="journal-link">
+              <span>ラジオとLIVE</span>
+              <span>LISTEN →</span>
+            </div>
+
+          </a>
+
+          <a
+            class="journal-card"
+            href="YOUR_NOTE_URL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <div class="journal-platform">
+              NOTE
+            </div>
+
+            <h3>
+              「私のことかも」で、<br>
+              立ち止まれる文章
+            </h3>
+
+            <p>
+              ちゃんとしているのに苦しい人へ。
+              子育てと日常の情景から、
+              心の奥にある感情をすくい上げます。
+            </p>
+
+            <div class="journal-link">
+              <span>コラムと記事</span>
+              <span>READ →</span>
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="final-cta-inner">
+
+        <div
+          class="section-label"
+          style="color:#eee1d3;"
+        >
+          Back to myself
+        </div>
+
+        <h2>
+          何者かになる前に、<br>
+          私に戻ろう。
+        </h2>
+
+        <p>
+          もっと頑張らなくてもいい。<br>
+          もっと正しくならなくてもいい。
+        </p>
+
+        <p>
+          誰かの期待に応える私を、
+          全部捨てなくてもいい。
+        </p>
+
+        <p>
+          ただ、その中に埋もれていた、
+          私の感覚をもう一度迎えにいく。
+        </p>
+
+        <p>
+          自分がどう感じているかが分かれば、
+          次の一歩は、
+          誰かに決めてもらわなくても選べます。
+        </p>
+
+        <div
+          class="button-wrap"
+          style="justify-content:center;"
+        >
+
+          <a
+            class="button button-light"
+            href="YOUR_APPLICATION_URL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            私に戻る対話を体験する
+          </a>
+
+        </div>
+
+        <p class="final-small">
+          体感学®認定講師・しょうこ<br>
+          足さない。急がない。装わない。<br>
+          私は、もう在る。
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div>
+      私だもの。｜体感学®認定講師しょうこの対話
+    </div>
+
+    <div>
+      Substack ｜ stand.fm ｜ note
+    </div>
+
+  </footer>
+
+
+  <!-- MOBILE FIXED CTA -->
+  <div class="mobile-fixed-cta">
+    <a href="#session">
+      無料対話を体験する
+    </a>
+  </div>
+
+</body>
+</html>
