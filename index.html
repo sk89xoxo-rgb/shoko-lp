@@ -1,22 +1,680 @@
-if (
-  'IntersectionObserver' in window &&
-  !window.matchMedia('(prefers-reduced-motion: reduce)').matches
-) {
-  const items = document.querySelectorAll('.reveal');
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('pending');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.07 });
+  <title>私だもの。｜しょうこと、まだ知らない私の声に出会う対話</title>
 
-  document.documentElement.classList.add('motion');
+  <meta
+    name="description"
+    content="ちゃんとしているのに、なぜか苦しいママ・ワーママへ。しょうことの対話で、まだ言葉にならない内側の声を感じてみませんか。体感学®︎を土台にした個別対話と、しょうこの想いをご紹介。30分の無料セッション。"
+  >
 
-  items.forEach(item => {
-    item.classList.add('pending');
-    observer.observe(item);
-  });
-}
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip" href="#main">本文へ</a>
+
+  <header class="header">
+    <a class="brand" href="#">
+      私だもの。
+      <span>SHOKO / DIALOGUE</span>
+    </a>
+
+    <nav aria-label="メインナビゲーション">
+      <a href="#media">しょうこの発信</a>
+      <a href="#about">対話のこと</a>
+      <a href="#profile">しょうこのこと</a>
+      <a class="nav-cta" href="#trial">
+        無料セッション
+        <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- 最初の画面 -->
+    <section class="hero wrap">
+      <div class="hero-text">
+        <p class="eyebrow">
+          家族も、仕事も、大切にしているあなたへ
+        </p>
+
+        <h1>
+          ちゃんとしているのに、<br>
+          なぜか苦しい。
+        </h1>
+
+        <p class="hero-message">
+          その言葉にならない気持ちを、<br>
+          <em>一緒に見つけます。</em>
+        </p>
+
+        <p>
+          ママの前に、私。<br>
+          「私はどうしたい？」に戻るための対話時間。<br>
+          しょうこと一緒に、まだ気づいていない<br>
+          内側の声に耳をすませてみませんか。
+        </p>
+
+        <div class="hero-actions">
+          <a class="button" href="#trial">
+            対話セッションを見る
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a class="button secondary" href="#media">
+            まずは、しょうこの言葉に触れる
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+
+        <p class="meta">
+          30分・無料 ／ オンライン・1対1
+        </p>
+      </div>
+
+      <div class="hero-aside">
+        <div class="hero-quote">
+          <span class="little">ふと、こぼれた言葉から。</span>
+
+          <p>
+            「私、本当は<br>
+            <em>そう感じてたんだ。</em>」
+          </p>
+
+          <span class="quote-line"></span>
+
+          <p class="quote-small">
+            まだ言葉になっていない気持ちを、<br>
+            一緒に見つけていきましょう。
+          </p>
+        </div>
+
+        <a class="person-link" href="#profile">
+          <img
+            src="profile.png"
+            alt="しょうこのプロフィールイメージ"
+            width="76"
+            height="76"
+          >
+          <span>
+            お話を聴くのは、しょうこです。
+            <small>体感学®︎認定インストラクター</small>
+          </span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <a class="scroll" href="#feelings">
+        こんな気持ち、ありませんか
+        <span aria-hidden="true">↓</span>
+      </a>
+    </section>
+
+    <!-- 共感 -->
+    <section id="feelings" class="feelings section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">
+            こんな気持ちは、ありませんか？
+          </p>
+          <h2>
+            「大丈夫」のあとに、<br>
+            残っている気持ち。
+          </h2>
+        </div>
+
+        <div class="moments">
+          <article class="moment reveal">
+            <span class="number">
+              01 / 口にした言葉と、気持ち
+            </span>
+            <h3>
+              「別にいいよ」と言ったのに、<br>
+              あとからイライラする。
+            </h3>
+            <p>
+              あのとき、飲み込んだ言葉。<br>
+              本当は何を伝えたかったんだろう。
+            </p>
+          </article>
+
+          <article class="moment reveal">
+            <span class="number">
+              02 / 家でも、職場でも
+            </span>
+            <h3>
+              自分で引き受けたのに、<br>
+              「なんで私ばっかり」と思う。
+            </h3>
+            <p>
+              役に立ちたい気持ちもある。<br>
+              でも、苦しい気持ちも残っている。
+            </p>
+          </article>
+
+          <article class="moment reveal">
+            <span class="number">
+              03 / 自分のこと
+            </span>
+            <h3>
+              人の話は聞けるのに、<br>
+              自分の本音が分からない。
+            </h3>
+            <p>
+              「私はどうしたい？」と聞かれると、<br>
+              言葉が止まってしまう。
+            </p>
+          </article>
+        </div>
+
+        <p class="section-close reveal">
+          うまく説明できなくても、大丈夫。<br>
+          <strong>
+            その「なんとなく」から、対話は始まります。
+          </strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- 発信を通じた信頼づくり -->
+    <section id="media" class="section trust-section">
+      <div class="wrap">
+        <div class="reveal">
+          <p class="eyebrow">
+            まずは、しょうこの言葉に触れてみる
+          </p>
+
+          <h2>
+            そのモヤモヤを、<br>
+            私はこんなふうに見つめています。
+          </h2>
+
+          <p>
+            家族のこと、仕事のこと、自分のこと。<br>
+            日々の出来事から、まだ言葉にならない気持ちをたどっています。<br>
+            今のあなたに合う入口から、ひとつ覗いてみてください。
+          </p>
+        </div>
+
+        <div class="media-links">
+          <a
+            class="reveal"
+            href="https://stand.fm/channels/663ca9e8875ed51dcfa7e99d"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>声や話し方から、私を知る</span>
+            <strong>stand.fm</strong>
+            <p>
+              日々のモヤモヤと、本音に出会うラジオ。
+              私がどんなふうに気持ちを見つめるか、
+              声でお届けしています。
+            </p>
+            <small>
+              しょうこの放送を聴く
+              <span aria-hidden="true">↗</span>
+            </small>
+          </a>
+
+          <a
+            class="reveal"
+            href="https://shokomam.substack.com/?utm_campaign=profile_chips"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>ひとつの問いを、深くたどる</span>
+            <strong>Substack</strong>
+            <p>
+              「なぜ、こう感じたんだろう？」
+              日常のモヤモヤを、文章と音声で
+              ゆっくり掘り下げています。
+            </p>
+            <small>
+              しょうこの文章と音声へ
+              <span aria-hidden="true">↗</span>
+            </small>
+          </a>
+
+          <a
+            class="reveal"
+            href="https://note.com/chocomama_simple"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>自分に重なる言葉を、見つける</span>
+            <strong>note</strong>
+            <p>
+              子育て、夫婦、仕事のこと。
+              日常の具体的な出来事から、
+              「私だったら？」と考える文章を綴っています。
+            </p>
+            <small>
+              しょうこの記事を読む
+              <span aria-hidden="true">↗</span>
+            </small>
+          </a>
+        </div>
+
+        <p class="media-note">
+          発信のリンクは、別のタブで開きます。
+        </p>
+
+        <div class="trust-bridge reveal">
+          <div>
+            <h3>「この人になら、話せそう」</h3>
+            <p>
+              そう感じたら、今度はあなたの気持ちを聴かせてください。<br>
+              対話では、こんなふうに一緒にたどっていきます。
+            </p>
+          </div>
+
+          <div class="bridge-actions">
+            <a class="button" href="#trial">
+              無料セッションを見る
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="text-link" href="#about">
+              どんな対話か、もう少し知る
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 対話の内容 -->
+    <section id="about" class="section wrap">
+      <div class="split">
+        <div class="reveal">
+          <p class="eyebrow">
+            しょうこは、何をしている人？
+          </p>
+          <h2>
+            「どうすればいい？」の前に、<br>
+            「私、どう感じてる？」
+          </h2>
+        </div>
+
+        <div class="reveal">
+          <p>
+            お話を聴きながら、ふと出てきた言葉や、
+            言いかけて止まった気持ちを一緒にたどります。
+            「本当は、どう感じているんだろう？」と、
+            あなた自身が内側の声に気づいていくための対話です。
+          </p>
+          <p>
+            言葉にしたときの胸のざわつきや、
+            ふっと力が抜ける感じ。
+            そんな小さな感覚にも耳をすませながら、
+            あなたの気持ちを一緒に見つけます。
+          </p>
+        </div>
+      </div>
+
+      <div class="dialogue reveal">
+        <div class="dialogue-label">
+          たとえば、こんな対話。
+          <small>対話のイメージです</small>
+        </div>
+
+        <div class="conversation">
+          <p class="speech you">
+            「夫にイライラしてしまう。<br>
+            もっと優しくしたいのに……」
+          </p>
+
+          <p class="speech shoko">
+            「そのとき、ほんとうは<br>
+            どうしてほしかったんだろう？」
+          </p>
+
+          <p class="speech you realization">
+            「……ひとりで抱えずに、<br>
+            <strong>一緒に考えてほしかったんだ。</strong>」
+          </p>
+        </div>
+
+        <p class="dialogue-end">
+          自分を責める言葉の奥に、<br>
+          大切にしたかった想いがあるかもしれません。
+        </p>
+      </div>
+    </section>
+
+    <!-- 対話の後の変化 -->
+    <section class="section changes">
+      <div class="wrap">
+        <div class="reveal">
+          <p class="eyebrow">
+            しょうこと話すと、どうなるの？
+          </p>
+
+          <h2>
+            モヤモヤの奥にある、<br>
+            「私の気持ち」が見えてくる。
+          </h2>
+
+          <p>
+            「私が悪いのかな」と思っていた気持ちの奥に、<br class="desktop">
+            ほんとうは大切にしたかったことが見つかるかもしれません。<br>
+            そんな気づきを、日常の小さな一歩につなげていきます。
+          </p>
+        </div>
+
+        <div class="change-list">
+          <article class="change reveal">
+            <span class="number">01</span>
+            <div>
+              <p class="before">
+                「こんなことで、イライラする私が嫌」
+              </p>
+              <h3>「私は、助けてほしかったんだ」</h3>
+              <p>
+                気持ちに名前がつくと、自分を責める前に、<br class="desktop">
+                自分の願いに気づける。
+              </p>
+            </div>
+            <p class="step">
+              たとえば、今日
+              <strong>「一緒に考えてほしい」と伝える。</strong>
+            </p>
+          </article>
+
+          <article class="change reveal">
+            <span class="number">02</span>
+            <div>
+              <p class="before">
+                「引き受けるのが、いいママなのかな」
+              </p>
+              <h3>
+                「大切にしたい。でも今は、余裕がない」
+              </h3>
+              <p>
+                周りへの想いと、自分の気持ち。<br class="desktop">
+                両方を大切にしながら選べる。
+              </p>
+            </div>
+            <p class="step">
+              たとえば、次は
+              <strong>すぐに「いいよ」と答えずにみる。</strong>
+            </p>
+          </article>
+
+          <article class="change reveal">
+            <span class="number">03</span>
+            <div>
+              <p class="before">
+                「仕事も子育ても、正解が分からない」
+              </p>
+              <h3>「今の私は、こうしてみたい」</h3>
+              <p>
+                誰かの正解を探す前に、<br class="desktop">
+                自分の希望を選択肢に入れられる。
+              </p>
+            </div>
+            <p class="step">
+              たとえば、まずは
+              <strong>自分の希望を、ひとつ書いてみる。</strong>
+            </p>
+          </article>
+        </div>
+
+        <p class="meta reveal">
+          気づきや変化には、それぞれのペースがあります。
+          大きな決断を急がなくて大丈夫です。
+        </p>
+      </div>
+    </section>
+
+    <!-- 大切にしていること -->
+    <section class="section wrap approach">
+      <div class="reveal">
+        <p class="eyebrow">
+          この時間で、大切にしていること
+        </p>
+        <h2>足さない。急がない。装わない。</h2>
+      </div>
+
+      <div class="principles">
+        <article class="reveal">
+          <h3>足さない。</h3>
+          <p>
+            もっと頑張る方法を探す前に、<br>
+            今のあなたの気持ちを聴きます。
+          </p>
+        </article>
+
+        <article class="reveal">
+          <h3>急がない。</h3>
+          <p>
+            言葉が止まっても、答えが出なくても。<br>
+            あなたのペースで進めます。
+          </p>
+        </article>
+
+        <article class="reveal">
+          <h3>装わない。</h3>
+          <p>
+            「家族が大事。でも、苦しい」<br>
+            矛盾する気持ちも、そのままで。
+          </p>
+        </article>
+      </div>
+
+      <div class="body-note reveal">
+        <span>体感学®︎を土台に</span>
+        <p>
+          頭で考えることと、体が感じること。
+          その両方を手がかりに、まだ言葉にならない気持ちを丁寧にたどります。
+          最後は、今の自分にできそうな一歩を一緒に確かめます。
+          「まだ決めない」も、ひとつの選択です。
+        </p>
+      </div>
+    </section>
+
+    <!-- プロフィール -->
+    <section id="profile" class="section profile-section">
+      <div class="wrap profile">
+        <figure class="portrait reveal">
+          <img
+            src="profile.png"
+            alt="しょうこのプロフィールイメージ"
+            width="600"
+            height="750"
+            loading="lazy"
+          >
+          <figcaption>
+            SHOKO
+            <span>足さない。急がない。装わない。</span>
+          </figcaption>
+        </figure>
+
+        <div class="reveal">
+          <p class="eyebrow">
+            私が、この対話をしている理由
+          </p>
+
+          <h2>
+            誰かを想うあなたが、<br>
+            自分の想いにも気づけるように。
+          </h2>
+
+          <p class="profile-lead">
+            私も、「私はどうしたい？」が<br>
+            分からなくなったひとりです。
+          </p>
+
+          <p>
+            ママとして。妻として。
+            誰かを優先するうちに、自分の気持ちが分からなくなる。
+            正しさを探して、人の気持ちを考えすぎて、
+            ちゃんとしようとして。
+            私自身も、何度もそうなってきました。
+          </p>
+
+          <p>
+            だからこそ、まだ言葉になっていない気持ちを一緒に見つけて、
+            あなたが「私は、こうしたい」と選ぶところまで、
+            隣にいたいと思っています。
+          </p>
+
+          <p class="qualification">
+            体感学®︎認定インストラクター
+          </p>
+
+          <a class="text-link" href="#about">
+            実際には、どんなふうに話すの？
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 無料セッション -->
+    <section id="trial" class="section trial wrap">
+      <div class="reveal">
+        <p class="eyebrow">
+          次は、あなたの言葉を聴かせてください
+        </p>
+
+        <h2>
+          「なんか、話してみたい」<br>
+          その気持ちからで、大丈夫。
+        </h2>
+
+        <p>
+          「夫にモヤモヤする」「仕事のことで迷っている」<br>
+          「理由は分からないけど、なんだかしんどい」
+        </p>
+
+        <p>
+          放送や文章に触れて、どこか心に残るものがあったなら。<br>
+          今度は、あなた自身の気持ちを一緒にたどってみませんか。<br>
+          きれいに話す準備はいりません。
+        </p>
+      </div>
+
+      <div class="trial-card reveal">
+        <span class="eyebrow">個別オンライン対話</span>
+
+        <h3><b>30</b>分の無料セッション</h3>
+
+        <dl>
+          <div>
+            <dt>形式</dt>
+            <dd>オンライン・1対1</dd>
+          </div>
+          <div>
+            <dt>事前準備</dt>
+            <dd>なし。まとまっていなくて大丈夫</dd>
+          </div>
+          <div>
+            <dt>料金</dt>
+            <dd><strong>無料</strong></dd>
+          </div>
+          <div>
+            <dt>お申込み</dt>
+            <dd>ただいま受付準備中</dd>
+          </div>
+        </dl>
+
+        <p class="availability">
+          無料セッションのお申込みは、<br>
+          準備が整い次第、こちらでご案内します。
+        </p>
+      </div>
+    </section>
+
+    <!-- よくある質問 -->
+    <section class="section faq">
+      <div class="wrap narrow">
+        <p class="eyebrow reveal">お話しする前に</p>
+        <h2 class="reveal">よくあるご質問</h2>
+
+        <details>
+          <summary>
+            話したいことがまとまっていなくても大丈夫？
+            <span aria-hidden="true">＋</span>
+          </summary>
+          <p>
+            まとまっていなくて大丈夫です。
+            「なんとなくモヤモヤする」というところから、
+            一緒にゆっくり見ていきます。
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            小さな悩みでも、話していいですか？
+            <span aria-hidden="true">＋</span>
+          </summary>
+          <p>
+            もちろんです。
+            「誰かに話して整理したい」「どうして気になったのか知りたい」。
+            そんな日常のひとつの出来事からでも、お話しいただけます。
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            コーチングですか？ カウンセリングですか？
+            <span aria-hidden="true">＋</span>
+          </summary>
+          <p>
+            特定の型に当てはめるより、
+            今のあなたの感覚と言葉を丁寧に拾うことを大切にしています。
+            体感学®︎を土台に、自分の気持ちを感じ、
+            自分で選べるところまで整理する個別対話です。
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            どんな人に合う対話ですか？
+            <span aria-hidden="true">＋</span>
+          </summary>
+          <p>
+            自分の気持ちが分からない、周りを考えすぎてしまう、
+            話しながら自分の希望を確かめたい方に。
+            答えや指示を受け取ることより、
+            ご自身が納得して選ぶことを大切にする時間です。
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- 最後の案内 -->
+    <section class="closing">
+      <div class="wrap reveal">
+        <p>
+          家族を想うあなたも。<br>
+          仕事に向き合うあなたも。<br>
+          言葉にならない気持ちを抱えたあなたも。
+        </p>
+
+        <h2>そのままで、ここへ。</h2>
+
+        <a class="button" href="#trial">
+          無料セッションについて見る
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <p class="closing-brand">私だもの。</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="wrap">
+    <a class="brand" href="#">私だもの。</a>
+    <span>© Shoko</span>
+    <a href="#main">ページの先頭へ ↑</a>
+  </footer>
+</body>
+</html>
