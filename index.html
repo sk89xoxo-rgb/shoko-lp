@@ -11,8 +11,224 @@
     content="ちゃんとしているのに、なぜか苦しいママ・ワーママへ。しょうことの対話で、まだ言葉にならない内側の声を感じてみませんか。体感学®︎を土台にした個別対話と、しょうこの想いをご紹介。30分の無料セッション。"
   >
 
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+<style>
+:root{
+  --bg:#f7f4ed;
+  --paper:#fffdf9;
+  --ink:#29342c;
+  --muted:#717a71;
+  --green:#566f5b;
+  --green-dark:#405646;
+  --green-soft:#e4ebe2;
+  --line:#dedfd7;
+  --sand:#ede4d7;
+  --max:1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  line-height:1.9;
+  letter-spacing:.02em;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+.narrow{max-width:760px}
+.section{padding:84px 0}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;background:#fff;padding:8px 12px;z-index:99}
+.header{
+  width:min(calc(100% - 40px),var(--max));
+  margin:0 auto;
+  padding:20px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+}
+.brand{
+  text-decoration:none;
+  font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif;
+  font-size:22px;
+  color:var(--green-dark);
+}
+.brand span{display:block;font:500 10px/1.4 Arial,sans-serif;letter-spacing:.15em;color:var(--muted)}
+nav{display:flex;align-items:center;gap:18px;font-size:13px}
+nav a{text-decoration:none}
+.nav-cta,.button{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  background:var(--green);
+  color:#fff;
+  padding:13px 20px;
+  border-radius:999px;
+  font-weight:700;
+}
+.button.secondary{
+  background:transparent;
+  color:var(--green);
+  border:1px solid var(--green);
+}
+.hero{
+  min-height:82vh;
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:54px;
+  align-items:center;
+  position:relative;
+  padding-top:64px;
+  padding-bottom:80px;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  width:420px;height:420px;border-radius:50%;
+  background:var(--green-soft);
+  right:-140px;top:20px;z-index:-1;
+}
+.eyebrow{
+  color:var(--green);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.12em;
+  margin:0 0 14px;
+}
+h1,h2,h3{
+  font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif;
+  font-weight:500;
+}
+h1{font-size:clamp(42px,7vw,72px);line-height:1.35;margin:0 0 24px}
+h2{font-size:clamp(30px,5vw,46px);line-height:1.5;margin:0 0 24px}
+h3{font-size:22px;line-height:1.55}
+.hero-message{font-size:20px;margin:0 0 18px}
+.hero-message em{font-style:normal;color:var(--green);font-weight:700}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.meta{font-size:13px;color:var(--muted)}
+.hero-aside{display:grid;gap:20px}
+.hero-quote{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:34px;
+  box-shadow:0 16px 40px rgba(50,65,55,.08);
+}
+.hero-quote p{font-family:Georgia,"Yu Mincho",serif;font-size:25px;line-height:1.7}
+.hero-quote em{font-style:normal;color:var(--green)}
+.little,.quote-small{font-size:12px!important;color:var(--muted)}
+.person-link{
+  display:flex;align-items:center;gap:12px;text-decoration:none;
+  background:rgba(255,255,255,.55);
+  padding:12px;border-radius:18px;border:1px solid var(--line)
+}
+.person-link img{width:76px;height:76px;object-fit:cover;border-radius:50%}
+.person-link small{display:block;color:var(--muted);font-size:11px}
+.scroll{position:absolute;bottom:20px;left:0;text-decoration:none;font-size:12px;color:var(--muted)}
+.feelings{background:var(--paper)}
+.section-head{max-width:720px}
+.moments,.media-links,.principles,.change-list{display:grid;gap:18px;margin-top:34px}
+.moments{grid-template-columns:repeat(3,1fr)}
+.moment,.change,.principles article{
+  padding:28px;
+  border-radius:22px;
+  border:1px solid var(--line);
+  background:var(--bg);
+}
+.number{font-size:11px;color:var(--green);font-weight:700;letter-spacing:.08em}
+.section-close{margin-top:28px}
+.trust-section{background:var(--green-dark);color:#fff}
+.trust-section .eyebrow{color:#dfe8de}
+.trust-section h2{color:#fff}
+.media-links{grid-template-columns:repeat(3,1fr)}
+.media-links>a{
+  display:flex;flex-direction:column;
+  color:#fff;text-decoration:none;
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:24px;padding:26px;
+  background:rgba(255,255,255,.06);
+}
+.media-links strong{font-size:26px;font-family:Georgia,"Yu Mincho",serif;margin:8px 0}
+.media-links p{font-size:14px}
+.media-links small{margin-top:auto;font-weight:700}
+.media-note{font-size:12px;opacity:.7}
+.trust-bridge{
+  margin-top:34px;
+  display:flex;justify-content:space-between;gap:28px;align-items:center;
+  padding:28px;border-radius:24px;background:#fff;color:var(--ink)
+}
+.bridge-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.text-link{font-weight:700;text-underline-offset:4px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.dialogue{
+  margin-top:42px;padding:34px;border-radius:28px;background:var(--paper);border:1px solid var(--line)
+}
+.dialogue-label{font-weight:700;color:var(--green)}
+.dialogue-label small{display:block;color:var(--muted);font-size:11px}
+.conversation{display:grid;gap:16px;margin:24px 0}
+.speech{max-width:72%;padding:16px 20px;border-radius:20px;background:var(--green-soft)}
+.speech.shoko{margin-left:auto;background:var(--green);color:#fff}
+.speech.realization{background:#fff;border:1px solid var(--line)}
+.changes{background:var(--paper)}
+.change-list{grid-template-columns:1fr}
+.change{display:grid;grid-template-columns:60px 1fr 260px;gap:20px;align-items:center}
+.before{color:var(--muted);font-size:13px}
+.step{background:var(--green-soft);padding:16px;border-radius:16px}
+.approach .principles{grid-template-columns:repeat(3,1fr)}
+.body-note{margin-top:30px;padding:28px;border-radius:24px;background:var(--green-soft)}
+.body-note span{font-weight:700;color:var(--green)}
+.profile-section{background:var(--paper)}
+.profile{display:grid;grid-template-columns:320px 1fr;gap:50px;align-items:start}
+.portrait{margin:0}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px}
+.portrait figcaption{padding-top:12px;font-family:Georgia,"Yu Mincho",serif}
+.portrait figcaption span{display:block;font-size:12px;color:var(--muted)}
+.profile-lead{font-family:Georgia,"Yu Mincho",serif;font-size:20px}
+.qualification{font-weight:700;color:var(--green)}
+.trial{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.trial-card{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:32px}
+.trial-card h3 b{font-size:46px;color:var(--green)}
+.trial-card dl{margin:24px 0}
+.trial-card dl div{display:grid;grid-template-columns:100px 1fr;padding:12px 0;border-bottom:1px solid var(--line)}
+.trial-card dt{color:var(--muted);font-size:13px}
+.trial-card dd{margin:0}
+.availability{padding:16px;background:var(--green-soft);border-radius:16px}
+.faq{background:var(--paper)}
+details{border-top:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:700}
+.closing{padding:86px 0;text-align:center;background:var(--green);color:#fff}
+.closing h2{color:#fff}
+.closing-brand{font-family:Georgia,"Yu Mincho",serif;font-size:24px;margin-top:30px}
+footer{display:flex;justify-content:space-between;align-items:center;padding:28px 0;color:var(--muted);font-size:12px}
+.reveal{opacity:1;transform:none}
+.motion .reveal.pending{opacity:0;transform:translateY(18px)}
+.motion .reveal{transition:opacity .6s ease,transform .6s ease}
+@media(max-width:840px){
+  nav{display:none}
+  .hero,.split,.profile,.trial{grid-template-columns:1fr}
+  .hero{min-height:auto}
+  .hero-aside{max-width:520px}
+  .moments,.media-links,.approach .principles{grid-template-columns:1fr}
+  .change{grid-template-columns:48px 1fr}
+  .change .step{grid-column:2}
+  .trust-bridge{flex-direction:column;align-items:flex-start}
+  .portrait{max-width:320px}
+}
+@media(max-width:620px){
+  .wrap{width:min(calc(100% - 28px),var(--max))}
+  .section{padding:64px 0}
+  .header{width:min(calc(100% - 28px),var(--max))}
+  .hero{padding-top:42px}
+  .hero-actions{flex-direction:column;align-items:flex-start}
+  .speech{max-width:88%}
+  footer{flex-direction:column;gap:10px}
+}
+</style>
+
 </head>
 
 <body>
@@ -676,5 +892,27 @@
     <span>© Shoko</span>
     <a href="#main">ページの先頭へ ↑</a>
   </footer>
+
+<script>
+if ('IntersectionObserver' in window &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const items = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('pending');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.07 });
+
+  document.documentElement.classList.add('motion');
+  items.forEach(item => {
+    item.classList.add('pending');
+    observer.observe(item);
+  });
+}
+</script>
+
 </body>
 </html>
